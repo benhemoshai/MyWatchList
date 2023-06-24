@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav.xml"
-    app:startDestination="@id/allMoviesFragment">
+    app:startDestination="@id/allItemsFragment">
 
     <fragment
         android:id="@+id/allMoviesFragment"
@@ -12,11 +12,68 @@
         tools:layout="@layout/movies_fragment">
         <action
             android:id="@+id/action_allMoviesFragment_to_singleMovieFragment"
-            app:destination="@id/singleMovieFragment" />
+            app:destination="@id/singleMovieFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/singleMovieFragment"
         android:name="il.co.syntax.finalkotlinproject.ui.single_movie.SingleMovieFragment"
         android:label="movie_detail_fragment"
-        tools:layout="@layout/movie_detail_fragment" />
+        tools:layout="@layout/movie_detail_fragment" >
+        <action
+            android:id="@+id/action_singleMovieFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/allItemsFragment"
+        android:name="il.co.syntax.finalkotlinproject.ui.allitems.AllItemsFragment"
+        android:label="all_items_fragment"
+        tools:layout="@layout/all_items_fragment">
+        <action
+            android:id="@+id/action_allItemsFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_allItemsFragment_to_detailedItemFragment"
+            app:destination="@id/detailedItemFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="il.co.syntax.finalkotlinproject.ui.additem.AddItemFragment"
+        android:label="add_item_layout"
+        tools:layout="@layout/add_item_layout">
+        <action
+            android:id="@+id/action_addItemFragment_to_allItemsFragment"
+            app:destination="@id/allItemsFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_addItemFragment_to_allMoviesFragment"
+            app:destination="@id/allMoviesFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedItemFragment"
+        android:name="il.co.syntax.finalkotlinproject.ui.detailitem.DetailedItemFragment"
+        android:label="detail_item_layout"
+        tools:layout="@layout/detail_item_layout" />
 </navigation>

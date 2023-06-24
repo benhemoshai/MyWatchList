@@ -8,7 +8,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import il.co.syntax.finalkotlinproject.data.loca_db.AppDatabase
+import il.co.syntax.finalkotlinproject.data.loca_db.ItemsDatabase
 import il.co.syntax.finalkotlinproject.data.remote_db.MovieInterface
 import il.co.syntax.finalkotlinproject.utils.Constants
 import retrofit2.Retrofit
@@ -34,15 +34,13 @@ object AppModule {
         retrofit.create(MovieInterface::class.java)
 
 
-
     @Provides
     @Singleton
-    fun provideLocalDataBase(@ApplicationContext appContext : Context) : AppDatabase =
-        AppDatabase.getDatabase(appContext)
-
+    fun provideItemDataBase(@ApplicationContext appContext : Context) : ItemsDatabase =
+        ItemsDatabase.getDatabase(appContext)
     @Provides
     @Singleton
-    fun provideMovieDao(database: AppDatabase) = database.movieDao()
+    fun provideItemDao(database: ItemsDatabase) = database.itemDao()
 
 
 

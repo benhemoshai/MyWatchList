@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <ImageView
             android:id="@+id/image"
             android:layout_width="200dp"
             android:layout_height="200dp"
@@ -100,25 +100,15 @@
             app:layout_constraintTop_toBottomOf="@+id/type"
             tools:text="TextView" />
 
-        <TextView
-            android:id="@+id/plot_text"
+        <Button
+            android:id="@+id/add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="304dp"
-            android:text="TextView"
+            android:text="add movie"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imdbID_text" />
-
-        <TextView
-            android:id="@+id/plot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imdbID" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

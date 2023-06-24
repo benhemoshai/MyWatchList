@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 import il.co.syntax.finalkotlinproject.data.models.Movie
+import il.co.syntax.finalkotlinproject.data.models.MovieResponse
 import il.co.syntax.finalkotlinproject.databinding.ItemMovieBinding
 
 
@@ -41,9 +42,9 @@ class MoviesAdapter(private val listener : MovieItemListener) :
         }
     }
 
-    fun setMovies(movies : Collection<Movie>) {
+    fun setMovies(movies : MovieResponse) {
         this.movies.clear()
-        this.movies.addAll(movies)
+        this.movies.addAll(movies.Search)
         notifyDataSetChanged()
     }
 
