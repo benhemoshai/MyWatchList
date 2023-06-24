@@ -33,7 +33,6 @@ object AppModule {
     fun provideMovieService(retrofit: Retrofit) : MovieInterface =
         retrofit.create(MovieInterface::class.java)
 
-
     @Provides
     @Singleton
     fun provideItemDataBase(@ApplicationContext appContext : Context) : ItemsDatabase =

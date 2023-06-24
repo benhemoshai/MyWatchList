@@ -75,5 +75,18 @@
         android:id="@+id/detailedItemFragment"
         android:name="il.co.syntax.finalkotlinproject.ui.detailitem.DetailedItemFragment"
         android:label="detail_item_layout"
-        tools:layout="@layout/detail_item_layout" />
+        tools:layout="@layout/detail_item_layout" >
+        <action
+            android:id="@+id/action_detailedItemFragment_to_itemUpdateFragment"
+            app:destination="@id/itemUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemUpdateFragment"
+        android:name="il.co.syntax.finalkotlinproject.ui.itemupdate.ItemUpdateFragment"
+        android:label="item_update_layout"
+        tools:layout="@layout/item_update_layout" >
+        <action
+            android:id="@+id/action_itemUpdateFragment_to_allItemsFragment"
+            app:destination="@id/allItemsFragment" />
+    </fragment>
 </navigation>

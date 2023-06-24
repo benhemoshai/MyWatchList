@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="30dp"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.detailitem.DetailedItemFragment"
+    tools:context=".ui.itemupdate.ItemUpdateFragment"
     android:background="@color/softblack">
 
     <androidx.cardview.widget.CardView
@@ -27,29 +27,25 @@
                 android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
-            <TextView
+            <Button
+                android:id="@+id/item_updated_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/item_date"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:layout_margin="10dp"
-                android:textStyle="bold"/>
+                android:text="date" />
 
-            <TextView
+            <EditText
+                android:id="@+id/item_updated_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/item_desc"
-                android:gravity="center"
-                android:textSize="25sp"
-                android:layout_margin="10dp"
-                android:textStyle="italic"/>
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
 
             <Button
-                android:id="@+id/updatebutton"
+                android:id="@+id/item_save_changes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="save changes" />
 
             <ImageView
                 android:layout_margin="15dp"

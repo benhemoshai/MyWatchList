@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
+import il.co.syntax.finalkotlinproject.R
 import il.co.syntax.fullarchitectureretrofithiltkotlin.utils.autoCleared
 import il.co.syntax.finalkotlinproject.ui.ItemViewModel
 import il.co.syntax.finalkotlinproject.databinding.DetailItemLayoutBinding
@@ -24,7 +26,9 @@ class DetailedItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DetailItemLayoutBinding.inflate(layoutInflater,container,false)
-
+        binding.updatebutton.setOnClickListener {
+            findNavController().navigate(R.id.action_detailedItemFragment_to_itemUpdateFragment)
+        }
         return binding.root
     }
 

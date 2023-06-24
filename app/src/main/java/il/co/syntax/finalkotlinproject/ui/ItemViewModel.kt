@@ -5,8 +5,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import il.co.syntax.finalkotlinproject.data.models.Item
 import il.co.syntax.finalkotlinproject.data.repository.ItemRepository
+import kotlinx.coroutines.launch
 
 class ItemViewModel(application: Application)
     : AndroidViewModel(application) {
@@ -24,16 +26,31 @@ class ItemViewModel(application: Application)
     }
 
     fun addItem(item: Item) {
-        repository.addItem(item)
+        viewModelScope.launch {
+            repository.addItem(item)
+        }
+
+    }
+
+    fun updateItem(item:Item){
+        viewModelScope.launch {
+            repository.updateItem(item)
+        }
     }
 
     fun deleteItem(item: Item) {
-        repository.deleteItem(item)
+        viewModelScope.launch {
+            repository.deleteItem(item)
+        }
+
     }
 
 
     fun deleteAll() {
-        repository.deleteAll()
+        viewModelScope.launch {
+            repository.deleteAll()
+        }
+
     }
 
 }
