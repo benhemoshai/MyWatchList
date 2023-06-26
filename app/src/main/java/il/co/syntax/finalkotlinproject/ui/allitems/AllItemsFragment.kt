@@ -59,39 +59,6 @@ class AllItemsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-/*
-        val menuHost: MenuHost = requireActivity()
-
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                // Add menu items here
-                menuInflater.inflate(R.menu.main_menu,menu)
-            }
-
-
-
-
-            //when the user clicks on the "delete all" button
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                // Handle the menu selection
-                return when (menuItem.itemId) {
-
-                    R.id.action_delete -> {
-                        showDeleteAllDialog()
-                        true
-                    }
-                    else -> false
-                }
-            }
-
-            //opens a dialog that asks the user if he wants to delete the whole list
-
-
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
-*/
-
-
         viewModel.items?.observe(viewLifecycleOwner) {
 
 

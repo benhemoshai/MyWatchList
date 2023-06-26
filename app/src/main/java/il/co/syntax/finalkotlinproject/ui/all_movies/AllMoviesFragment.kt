@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -46,20 +47,42 @@ class AllMoviesFragment : Fragment(), MoviesAdapter.MovieItemListener {
         binding.charactersRv.adapter = adapter
 
         viewModel.movies.observe(viewLifecycleOwner) {
-            when(it.status) {
+            when (it.status) {
                 is Loading -> binding.progressBar.visibility = View.VISIBLE
 
                 is Success -> {
-                    binding.progressBar.visibility = View.GONE
-                    adapter.setMovies(it.status.data!!)
+                    val response = it.status.data?.Response
+                    if (response == "False") {
+                        Toast.makeText(requireContext(), "Please enter other search term", Toast.LENGTH_LONG).show()
+                    } else {
+                        binding.progressBar.visibility = View.GONE
+                        adapter.setMovies(it.status.data!!)
+                    }
                 }
 
                 is Error -> {
                     binding.progressBar.visibility = View.GONE
-                    Toast.makeText(requireContext(),it.status.message,Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), it.status.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                performSearch(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                return false
+            }
+        })
+    }
+
+    private fun performSearch(query: String) {
+        // Make your API call here using the query value
+        // For example, you can call your view model's searchMovies() function
+        viewModel.getMovies(query)
     }
 
     override fun onMovieClick(movieId: String) {

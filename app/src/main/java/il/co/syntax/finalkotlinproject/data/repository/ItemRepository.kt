@@ -30,6 +30,8 @@ class ItemRepository(application: Application) {
         itemDao?.deleteItem(item)
     }
 
+
+
     suspend fun deleteAll() {
         itemDao?.deleteAll()
     }

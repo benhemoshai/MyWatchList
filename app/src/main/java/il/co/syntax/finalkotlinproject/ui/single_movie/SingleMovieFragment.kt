@@ -80,6 +80,6 @@ class SingleMovieFragment : Fragment() {
         binding.type.text = movie.Type
         binding.imdbID.text = movie.imdbID
         sharedviewModel.setImage(movie.Poster)
-        Glide.with(requireContext()).load(movie.Poster).circleCrop().into(binding.image)
+        Glide.with(requireContext()).load(movie.Poster).into(binding.image)
     }
 }

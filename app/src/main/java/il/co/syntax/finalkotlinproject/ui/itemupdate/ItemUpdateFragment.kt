@@ -37,25 +37,6 @@ class ItemUpdateFragment : Fragment() {
         binding = ItemUpdateLayoutBinding.inflate(layoutInflater,container,false)
 
 
-        additemviewmodel.image.observe(viewLifecycleOwner) {
-            imgURL = it
-        }
-
-        binding.itemSaveChanges.setOnClickListener {
-            val item = Item(
-                binding.itemTitle.text.toString(),
-                binding.itemUpdatedDesc.text.toString(),
-                binding.itemUpdatedDate.text.toString(),
-                imgURL
-            )
-            viewModel.updateItem(item)
-
-            findNavController().navigate(R.id.action_itemUpdateFragment_to_allItemsFragment)
-        }
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewModel.chosenItem.observe(viewLifecycleOwner) {
             binding.itemTitle.text = it.title
             binding.itemUpdatedDesc.setText(it.description)
@@ -64,11 +45,24 @@ class ItemUpdateFragment : Fragment() {
                 .into(binding.itemImage)
         }
 
+        binding.itemSaveChanges.setOnClickListener {
+            viewModel.updateItem(binding.itemUpdatedDate.text.toString(),binding.itemUpdatedDesc.text.toString())
+            findNavController().navigate(R.id.action_itemUpdateFragment_to_allItemsFragment)
+        }
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         binding.itemUpdatedDate.setOnClickListener {
             showDatePicker()
         }
         super.onViewCreated(view, savedInstanceState)
     }
+
+
+
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
         val currentYear = calendar.get(Calendar.YEAR)
@@ -100,7 +94,7 @@ class ItemUpdateFragment : Fragment() {
             val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             val formattedDate = dateFormat.format(selectedDate!!)
             binding.itemUpdatedDate.text = formattedDate
-            //additemviewmodel.setDate(binding.itemUpdatedDate.text.toString())
+
         }
     }
 

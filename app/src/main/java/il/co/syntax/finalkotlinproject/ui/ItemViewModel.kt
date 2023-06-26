@@ -20,7 +20,7 @@ class ItemViewModel(application: Application)
 
     private val _chosenItem = MutableLiveData<Item>()
     val chosenItem : LiveData<Item> get() = _chosenItem
-
+    val item : Item? = chosenItem.value
     fun setItem(item: Item) {
         _chosenItem.value = item
     }
@@ -32,9 +32,16 @@ class ItemViewModel(application: Application)
 
     }
 
-    fun updateItem(item:Item){
-        viewModelScope.launch {
-            repository.updateItem(item)
+
+    fun updateItem(date: String, desc: String) {
+        val currentItem = chosenItem.value
+        if (currentItem != null) {
+            currentItem.date = date
+            currentItem.description = desc
+
+            viewModelScope.launch {
+                repository.updateItem(currentItem)
+            }
         }
     }
 

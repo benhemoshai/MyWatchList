@@ -15,10 +15,10 @@ data class Item(
     val title:String,
 
     @ColumnInfo(name = "description")
-    val description:String,
+    var description:String,
 
     @ColumnInfo(name = "date")
-    val date:String,
+    var date:String,
 
     @ColumnInfo(name = "image")
     val photo: String?)
