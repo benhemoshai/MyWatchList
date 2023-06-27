@@ -49,7 +49,7 @@
                 android:id="@+id/updatebutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="@string/edit_button" />
 
             <ImageView
                 android:layout_margin="15dp"

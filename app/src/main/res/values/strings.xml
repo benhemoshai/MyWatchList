@@ -13,4 +13,6 @@
 
     <string name="add_movie_button">Add a movie</string>
 
+    <string name="edit_button">Edit</string>
+
 </resources>

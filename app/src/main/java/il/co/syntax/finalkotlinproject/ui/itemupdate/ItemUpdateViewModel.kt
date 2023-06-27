@@ -20,8 +20,14 @@ class ItemUpdateViewModel @Inject constructor(): ViewModel() {
     private val _date = MutableLiveData<String>()
     val date: LiveData<String> = _date
 
+    private val _desc = MutableLiveData<String>()
+    val desc: LiveData<String> = _desc
     fun setDate(date : String) {
         _date.value = date
     }
+    fun setDesc(desc : String) {
+        _desc.value = desc
+    }
+
 
 }

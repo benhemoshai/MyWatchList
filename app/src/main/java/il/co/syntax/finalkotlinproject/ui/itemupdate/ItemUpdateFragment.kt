@@ -27,7 +27,6 @@ class ItemUpdateFragment : Fragment() {
     private val viewModel : ItemViewModel by activityViewModels()
     private var selectedDate: Date? = null
     private val updateItemViewModel: ItemUpdateViewModel by activityViewModels()
-    private var imgURL: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,7 +43,6 @@ class ItemUpdateFragment : Fragment() {
             Glide.with(requireContext()).load(it.photo)
                 .into(binding.itemImage)
         }
-
         binding.itemSaveChanges.setOnClickListener {
             viewModel.updateItem(binding.itemUpdatedDate.text.toString(),binding.itemUpdatedDesc.text.toString())
             findNavController().navigate(R.id.action_itemUpdateFragment_to_allItemsFragment)
@@ -55,17 +53,18 @@ class ItemUpdateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+
         binding.itemUpdatedDate.setOnClickListener {
             showDatePicker()
-
         }
+
         updateItemViewModel.date.observe(viewLifecycleOwner){
             binding.itemUpdatedDate.text = it
         }
+
+
         super.onViewCreated(view, savedInstanceState)
     }
-
-
 
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
@@ -89,7 +88,6 @@ class ItemUpdateFragment : Fragment() {
 
         // Disable past dates
         datePickerDialog.datePicker.minDate = System.currentTimeMillis() - 1000
-
         datePickerDialog.show()
     }
 
