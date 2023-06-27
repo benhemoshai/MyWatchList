@@ -26,7 +26,7 @@ class ItemUpdateFragment : Fragment() {
     private  var binding: ItemUpdateLayoutBinding by autoCleared()
     private val viewModel : ItemViewModel by activityViewModels()
     private var selectedDate: Date? = null
-    private val additemviewmodel: AddItemViewModel by activityViewModels()
+    private val updateItemViewModel: ItemUpdateViewModel by activityViewModels()
     private var imgURL: String? = null
 
     override fun onCreateView(
@@ -57,6 +57,10 @@ class ItemUpdateFragment : Fragment() {
 
         binding.itemUpdatedDate.setOnClickListener {
             showDatePicker()
+
+        }
+        updateItemViewModel.date.observe(viewLifecycleOwner){
+            binding.itemUpdatedDate.text = it
         }
         super.onViewCreated(view, savedInstanceState)
     }
@@ -93,7 +97,7 @@ class ItemUpdateFragment : Fragment() {
         if (selectedDate != null) {
             val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             val formattedDate = dateFormat.format(selectedDate!!)
-            binding.itemUpdatedDate.text = formattedDate
+            updateItemViewModel.setDate(formattedDate)
 
         }
     }

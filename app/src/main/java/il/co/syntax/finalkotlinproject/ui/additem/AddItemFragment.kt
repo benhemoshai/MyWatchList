@@ -148,8 +148,7 @@ class AddItemFragment : Fragment() {
             if (selectedDate != null) {
                 val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                 val formattedDate = dateFormat.format(selectedDate!!)
-                binding.date.text = formattedDate
-                additemviewmodel.setDate(binding.date.text.toString())
+                additemviewmodel.setDate(formattedDate)
             }
         }
 
