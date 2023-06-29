@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FinalKotlinProject</string>
+    <string name="movie_title">לא נבחר סרט</string>
+    <string name="movie_list_button">בחר סרט</string>
+    <string name="description_hint">הזן תיאור</string>
+    <string name="date_button">תאריך</string>
+    <string name="finish_button">סיום</string>
+    <string name="movie_toast">אנא בחר סרט</string>
+    <string name="date_toast">אנא הזן תאריך</string>
+    <string name="add_movie_button">הוסף סרט</string>
+    <string name="edit_button">עריכה</string>
+    <string name="save_changes_button">שמור שינויים</string>
+    <string name="year">שנה</string>
+    <string name="type">סוג</string>
+    <string name="imdb">מס\' סידורי</string>
+    <string name="add_towatchlist_button">הוסף לרשימת צפייה</string>
+    <string name="mywatchlist_button">רשימת הצפייה שלי</string>
+    <string name="movieslist_button">סרטים</string>
+    <string name="welcome">ברוכים הבאים לרשימת הצפייה שלי</string>
+</resources>

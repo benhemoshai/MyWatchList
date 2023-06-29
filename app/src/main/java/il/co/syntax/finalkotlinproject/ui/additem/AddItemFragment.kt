@@ -52,8 +52,6 @@ class AddItemFragment : Fragment() {
     ): View? {
         _binding = AddItemLayoutBinding.inflate(inflater, container, false)
 
-       // Glide.with(requireContext()).load(R.drawable.movienight).into(binding.resultImage)
-
         //observes the changes in the date
         additemviewmodel.date.observe(viewLifecycleOwner) { date ->
             binding.date.text = date
@@ -61,14 +59,10 @@ class AddItemFragment : Fragment() {
         additemviewmodel.movieName.observe(viewLifecycleOwner) { movieTitle ->
             binding.MovieName.text = movieTitle.toString()
         }
-
-
         additemviewmodel.image.observe(viewLifecycleOwner) {
             Glide.with(requireContext()).load(it).into(binding.resultImage)
             imgURL = it
-
         }
-
 
         //when the user clicks on finish button - checks if he selected a date and a movie
         //if not, it shows a toast message. if yes it creates an item which includes

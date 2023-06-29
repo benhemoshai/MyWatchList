@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,7 +27,7 @@ class ItemUpdateFragment : Fragment() {
     private  var binding: ItemUpdateLayoutBinding by autoCleared()
     private val viewModel : ItemViewModel by activityViewModels()
     private var selectedDate: Date? = null
-    private val updateItemViewModel: ItemUpdateViewModel by activityViewModels()
+    private val updateItemViewModel: ItemUpdateViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

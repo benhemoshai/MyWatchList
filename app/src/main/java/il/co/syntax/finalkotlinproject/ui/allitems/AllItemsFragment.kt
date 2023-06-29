@@ -42,14 +42,10 @@ class AllItemsFragment : Fragment() {
             Toast.makeText(requireActivity(),it,Toast.LENGTH_SHORT).show()
         }
 
-
-
         //when the user clicks on "add a movie" button - moves to the "add item fragment"
         binding.flotaingAction.setOnClickListener {
             findNavController().navigate(R.id.action_allItemsFragment_to_addItemFragment)
         }
-
-
 
         return binding.root
     }

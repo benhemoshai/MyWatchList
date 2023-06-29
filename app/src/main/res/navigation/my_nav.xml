@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav.xml"
-    app:startDestination="@id/allItemsFragment">
+    app:startDestination="@id/homeScreenFragment">
 
     <fragment
         android:id="@+id/allMoviesFragment"
@@ -88,5 +88,16 @@
         <action
             android:id="@+id/action_itemUpdateFragment_to_allItemsFragment"
             app:destination="@id/allItemsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="il.co.syntax.finalkotlinproject.ui.homscreen.HomeScreenFragment"
+        android:label="HomeScreenFragment" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_allItemsFragment"
+            app:destination="@id/allItemsFragment" />
+        <action
+            android:id="@+id/action_homeScreenFragment_to_allMoviesFragment"
+            app:destination="@id/allMoviesFragment" />
     </fragment>
 </navigation>

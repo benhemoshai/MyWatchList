@@ -26,6 +26,7 @@ class DetailedItemFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DetailItemLayoutBinding.inflate(layoutInflater,container,false)
+
         binding.updatebutton.setOnClickListener {
             findNavController().navigate(R.id.action_detailedItemFragment_to_itemUpdateFragment)
         }

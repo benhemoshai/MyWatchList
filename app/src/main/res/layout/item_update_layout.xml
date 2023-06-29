@@ -31,21 +31,22 @@
                 android:id="@+id/item_updated_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="date" />
+                android:text="@string/date_button" />
 
+            
             <EditText
                 android:id="@+id/item_updated_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="" />
 
             <Button
                 android:id="@+id/item_save_changes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="save changes" />
+                android:text="@string/save_changes_button" />
 
             <ImageView
                 android:layout_margin="15dp"

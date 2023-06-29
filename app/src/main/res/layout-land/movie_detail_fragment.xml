@@ -24,8 +24,9 @@
             android:id="@+id/image"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.888"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,26 +34,25 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:layout_marginTop="80dp"
             android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.269"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="TextView" />
 
         <TextView
             android:id="@+id/year_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="30dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="24dp"
 
             android:text="@string/year"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -60,9 +60,8 @@
             android:id="@+id/year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="60dp"
-            android:textSize="20sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="360dp"
             android:textColor="@color/white"
 
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,14 +72,11 @@
             android:id="@+id/type_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-
-            android:textSize="20sp"
-            android:textStyle="bold"
-
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="24dp"
             android:text="@string/type"
+
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/year_text" />
 
@@ -88,11 +84,10 @@
             android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="356dp"
             android:textColor="@color/white"
 
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/year"
             tools:text="TextView" />
@@ -101,13 +96,11 @@
             android:id="@+id/imdbID_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="24dp"
             android:text="@string/imdb"
+
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/type_text" />
 
@@ -115,11 +108,10 @@
             android:id="@+id/imdbID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="356dp"
             android:textColor="@color/white"
 
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/type"
             tools:text="TextView" />
@@ -128,11 +120,14 @@
             android:id="@+id/add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="76dp"
             android:text="@string/add_towatchlist_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.874"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/image"
+            app:layout_constraintVertical_bias="0.228" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
